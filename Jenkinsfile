@@ -49,12 +49,14 @@ pipeline{
                 script{
 
                     dir('kubernetes/') {
-                         sh 'helm datree test myapp/'
-                        
+                        withEnv(['DATREE_TOKEN=dad326a8-821a-4f04-ae0d-834eaf9addf7']) {
+                              sh 'helm datree test myapp/'
+                        }
                     }
                 }
             }
-        }
+        }   
+            
     }
     post {
 		always {
