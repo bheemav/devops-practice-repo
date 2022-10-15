@@ -5,7 +5,7 @@ pipeline{
         stage("Sonar Quality Check"){
             agent{
                 docker{
-                    image 'cbush06/bamboo-builder'
+                    image 'openjdk:11'
                 }
             }
             
